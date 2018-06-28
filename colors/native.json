@@ -55,8 +55,8 @@
       "GitGutterAdd":     {"fg":  "DarkGreen",    "bg": "DarkGreen",    "opt": "bold"},
       "GitGutterChange":  {"fg":  "HonoluluBlue", "bg": "HonoluluBlue", "opt": "bold"},
       "GitGutterDelete":  {"fg":  "Maroon",       "bg": "Maroon",       "opt": "bold"},
-      "Error":            {"bg":  "Tan", "fg":          "AppleRed"},
-      "ErrorMsg":         {"fg":  "AppleRed" },
+      "Error":            {"fg":  "AppleRed"},
+      "ErrorMsg":         {"fg":  "AppleRed"},
       "NERDTreeExecFile": {"fg":  "EerieBlack",   "bg": "DesertSand"},
       "Directory":        {"fg":  "HonoluluBlue"},
       "CursorLine":       {"bg":  "Sage"},
@@ -66,12 +66,13 @@
       "Boolean":          {"fg":  "DarkCoral"},
       "EndOfBuffer":      {"fg":  "DesertSand",   "bg": "DesertSand"},
       "ExtraWhitespace":  {"bg":  "Tan"},
-      "SpellBad":         {"fg":  "AppleRed", "    bg": "Tan"},
+      "SpellBad":         {"fg":  "AppleRed",     "bg": "Tan"},
       "fzf1":             {"fg":  "Blonde",       "bg": "Shadow"},
       "fzf2":             {"fg":  "Blonde",       "bg": "Shadow"},
       "fzf3":             {"fg":  "Blonde",       "bg": "Shadow"},
       "Title":            {"fg":  "DarkGreen"},
-      "Quote":            {"fg":  "HonoluluBlue"}
+      "Quote":            {"fg":  "HonoluluBlue"},
+      "ALEErrorSign":     {"fg":  "AppleRed", "bg": "DarkVanilla", "opt": "bold"}
     },
     "vim":
     {
@@ -225,6 +226,36 @@
     "json":
     {
       "jsonKeywordMatch": {"fg":  "AppleRed"}
+    }
+  },
+  "airline":
+  {
+    "normal":
+    {
+      "a":     {"fg": "Blonde",     "bg": "Umber"},
+      "b":     {"fg": "EerieBlack", "bg": "Blonde"},
+      "c":     {"fg": "Blonde",     "bg": "Umber"},
+      "x":     {"fg": "Blonde",     "bg": "Umber"},
+      "y":     {"fg": "Black",      "bg": "Blonde"},
+      "z":     {"fg": "EerieBlack", "bg": "Blonde"},
+      "error": {"fg": "Blonde",     "bg": "AppleRed"}
+    },
+    "insert":
+    {
+      "a": {"fg": "Blonde",     "bg": "DarkGreen"}
+    },
+    "visual":
+    {
+      "a": {"fg": "Blonde",     "bg": "OxfordBlue"}
+    },
+    "inactive":
+    {
+      "a": {"fg": "Blonde", "bg": "Umber"},
+      "b": {"fg": "Blonde", "bg": "Umber"},
+      "c": {"fg": "Blonde", "bg": "Umber"},
+      "x": {"fg": "Blonde", "bg": "Umber"},
+      "y": {"fg": "Blonde", "bg": "Umber"},
+      "z": {"fg": "Blonde", "bg": "Umber"}
     }
   }
 }

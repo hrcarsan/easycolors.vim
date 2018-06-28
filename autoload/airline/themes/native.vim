@@ -3,34 +3,47 @@
 " Name: native
 " Maintainer: Santiago Herrera Cardona <santiagohecar@gmail.com>
 
-function! s:Color(fg, bg, ...)
-  let opt     = get(a:, 1, 'NONE')
-  let palette = g:native_palette["palette"] 
+let s:hi_def    = g:native_palette["airline"]
+let s:palette   = {}
+let s:modes     = ['normal', 'insert', 'replace', 'visual', 'inactive']
+let s:overrides = ['modified', 'paste']
 
-  return [ palette[a:fg]['hex'],  palette[a:bg]['hex'], 
-          \palette[a:fg]['term'], palette[a:bg]['term'], opt]
+
+function! s:Hi(mode)
+
+  let s:palette[a:mode] = a:mode == "normal"? {}: copy(s:palette.normal)
+
+  if !exists("s:hi_def.".a:mode) | return |  endif
+
+  let sections = s:hi_def[a:mode]
+
+  for section in keys(sections)
+
+    let hi      = sections[section]
+    let section = "airline_".section
+    let fgcolor = get(g:native_palette["palette"], get(hi, 'fg', ''), {"term":"", "hex":""})
+    let bgcolor = get(g:native_palette["palette"], get(hi, 'bg', ''), {"term":"", "hex":""})
+    let opt     = get(hi, 'opt', '')
+
+    let s:palette[a:mode][section] =
+    \[
+      \fgcolor['hex'],  bgcolor['hex'],
+      \fgcolor['term'], bgcolor['term'],
+      \opt
+    \]
+
+  endfor
 endfunction
 
-let s:palette = {}
 
-let s:palette.normal           = {}
-let s:palette.normal.airline_a = s:Color('Blonde',     'Umber')
-let s:palette.normal.airline_b = s:Color('EerieBlack', 'Blonde')
-let s:palette.normal.airline_c = s:Color('Blonde',     'Umber')
-let s:palette.normal.airline_x = s:Color('Blonde',     'Umber')
-let s:palette.normal.airline_y = s:Color('Black',      'Blonde')
-let s:palette.normal.airline_z = s:Color('EerieBlack', 'Blonde')
+for mode in s:modes
 
-let s:palette.insert  = copy(s:palette.normal)
+  call s:Hi(mode)
 
-let s:palette.replace = copy(s:palette.normal)
+  "for override in s:overrides
 
-let s:palette.inactive           = {}
-let s:palette.inactive.airline_a = s:Color('Blonde', 'Umber')
-let s:palette.inactive.airline_b = s:Color('Blonde', 'Umber')
-let s:palette.inactive.airline_c = s:Color('Blonde', 'Umber')
-let s:palette.inactive.airline_x = s:Color('Blonde', 'Umber')
-let s:palette.inactive.airline_y = s:Color('Blonde', 'Umber')
-let s:palette.inactive.airline_z = s:Color('Blonde', 'Umber')
+    "call s:Hi(mode.'_'.override)
+  "endfor
+endfor
 
 let g:airline#themes#native#palette = s:palette
