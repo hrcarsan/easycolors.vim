@@ -1,7 +1,7 @@
 {
   "palette":
   {
-    "Black":        {"term": 0,   "hex": "#212016"},
+    "Black":        {"term": 0,   "hex": "#000000"},
     "EerieBlack":   {"term": 0,   "hex": "#212016"},
     "Sage":         {"term": 144, "hex": "#afaf87"},
     "Shadow":       {"term": 101, "hex": "#87875f"},
