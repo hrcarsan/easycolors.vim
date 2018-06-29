@@ -1,2 +1,2 @@
-# native
-My personal color scheme for vim/nvim
+# easycolors.vim
+Work in progress
