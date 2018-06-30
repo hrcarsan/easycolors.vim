@@ -1,31 +1,31 @@
-" Vim color file
+" Airline easycolors
 "
-" Name: native
 " Maintainer: Santiago Herrera Cardona <santiagohecar@gmail.com>
 
-let s:hi_def    = g:native_palette["airline"]
+let s:easycolor = g:easycolor["airline"]
 let s:palette   = {}
 let s:modes     = ['normal', 'insert', 'replace', 'visual', 'inactive']
 let s:overrides = ['modified', 'paste']
+
+let g:airline#themes#easycolors#palette = s:palette
 
 
 function! s:Hi(mode)
 
   let s:palette[a:mode] = a:mode == "normal"? {}: copy(s:palette.normal)
 
-  if !exists("s:hi_def.".a:mode) | return |  endif
+  if !exists("s:easycolor.".a:mode) | return |  endif
 
-  let sections = s:hi_def[a:mode]
+  let sections = s:easycolor[a:mode]
 
   for section in keys(sections)
 
     let hi      = sections[section]
-    let section = "airline_".section
-    let fgcolor = get(g:native_palette["palette"], get(hi, 'fg', ''), {"term":"", "hex":""})
-    let bgcolor = get(g:native_palette["palette"], get(hi, 'bg', ''), {"term":"", "hex":""})
+    let fgcolor = get(g:easycolor["palette"], get(hi, 'fg', ''), {"term":"", "hex":""})
+    let bgcolor = get(g:easycolor["palette"], get(hi, 'bg', ''), {"term":"", "hex":""})
     let opt     = get(hi, 'opt', '')
 
-    let s:palette[a:mode][section] =
+    let s:palette[a:mode]["airline_".section] =
     \[
       \fgcolor['hex'],  bgcolor['hex'],
       \fgcolor['term'], bgcolor['term'],
@@ -46,4 +46,3 @@ for mode in s:modes
   "endfor
 endfor
 
-let g:airline#themes#native#palette = s:palette
