@@ -6,7 +6,7 @@ if version > 580
 
 	hi clear
 
-	if exists("syntax_on") | syntax reset | endif
+	if exists('syntax_on') | syntax reset | endif
 endif
 
 
