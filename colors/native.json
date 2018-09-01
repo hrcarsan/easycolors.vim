@@ -68,17 +68,21 @@
       "EndOfBuffer":      {"fg":  "DesertSand",   "bg": "DesertSand"},
       "ExtraWhitespace":  {"bg":  "Tan"},
       "SpellBad":         {"fg":  "AppleRed",     "bg": "Tan"},
+      "SpellCap":         {"fg":  "AppleRed",     "bg": "Tan"},
       "fzf1":             {"fg":  "Blonde",       "bg": "Shadow"},
       "fzf2":             {"fg":  "Blonde",       "bg": "Shadow"},
       "fzf3":             {"fg":  "Blonde",       "bg": "Shadow"},
       "Title":            {"fg":  "DarkGreen"},
       "Quote":            {"fg":  "HonoluluBlue"},
-      "ALEErrorSign":     {"fg":  "AppleRed", "bg": "DarkVanilla", "opt": "bold"}
+      "WildMenu":         {"fg":  "EerieBlack", "bg": "Blonde"},
+      "StatusLine":       {"fg":  "Blonde",     "bg": "Umber"},
+      "ALEErrorSign":     {"fg":  "AppleRed",   "bg": "DarkVanilla", "opt": "bold"},
+      "ALEWarningSign":   {"fg":  "DarkOrange", "bg": "DarkVanilla", "opt": "bold"}
     },
     "vim":
     {
       "VimCommentString": {"link": "Comment"},
-      "VimOperParen":     {"link": "Identifier"},
+      "VimOperParen":     {"link": "Operator"},
       "vimFunction":      {"fg":   "Ginger"},
       "vimFuncName":      {"fg":   "Brown"},
       "vimLet":           {"link": "Preproc"},
@@ -252,13 +256,15 @@
   {
     "normal":
     {
-      "a":     {"fg": "Blonde",     "bg": "Umber"},
-      "b":     {"fg": "EerieBlack", "bg": "Blonde"},
-      "c":     {"fg": "Blonde",     "bg": "Umber"},
-      "x":     {"fg": "Blonde",     "bg": "Umber"},
-      "y":     {"fg": "Black",      "bg": "Blonde"},
-      "z":     {"fg": "EerieBlack", "bg": "Blonde"},
-      "error": {"fg": "Blonde",     "bg": "AppleRed"}
+      "a":       {"fg": "Blonde",     "bg": "EerieBlack"},
+      "b":       {"fg": "EerieBlack", "bg": "Blonde"},
+      "c":       {"fg": "Blonde",     "bg": "Umber"},
+      "x":       {"fg": "Blonde",     "bg": "Umber"},
+      "y":       {"fg": "Black",      "bg": "Blonde"},
+      "z":       {"fg": "EerieBlack", "bg": "Blonde"},
+      "error":   {"fg": "Blonde",     "bg": "AppleRed"},
+      "warning": {"fg": "Blonde",     "bg": "DarkOrange"},
+      "term":    {"fg": "Blonde",     "bg": "Umber"}
     },
     "insert":
     {
@@ -277,5 +283,42 @@
       "y": {"fg": "Blonde", "bg": "Umber"},
       "z": {"fg": "Blonde", "bg": "Umber"}
     }
+  },
+  "terminal":
+  {
+    "0" : "Sage",
+    "1" : "AppleRed",
+    "2" : "DarkGreen",
+    "3" : "DarkOrange",
+    "4" : "HonoluluBlue",
+    "5" : "DarkMagenta",
+    "6" : "SpringGreen",
+    "7" : "Blonde",
+    "9" : "Maroon",
+    "10": "Brown",
+    "11": "Ginger",
+    "12": "OxfordBlue",
+    "13": "DarkCoral",
+    "14": "DarkMagenta",
+    "15": "Blonde",
+    "16": "EerieBlack",
+    "17": "EerieBlack"
+  },
+  "identline": "Shadow",
+  "fzf":
+  {
+    "fg":      ["fg", "Normal"],
+    "bg":      ["bg", "Normal"],
+    "hl":      ["fg", "Comment"],
+    "fg+":     ["fg", "CursorLine", "CursorColumn", "Normal"],
+    "bg+":     ["bg", "CursorLine", "CursorColumn"],
+    "hl+":     ["fg", "Statement"],
+    "info":    ["fg", "PreProc"],
+    "border":  ["fg", "Ignore"],
+    "prompt":  ["fg", "Conditional"],
+    "pointer": ["fg", "Exception"],
+    "marker":  ["fg", "Keyword"],
+    "spinner": ["fg", "Label"],
+    "header":  ["fg", "Comment"]
   }
 }
