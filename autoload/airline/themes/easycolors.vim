@@ -4,11 +4,15 @@
 
 let s:easycolor = g:easycolor["airline"]
 let s:palette   = {}
-let s:modes     = ['normal', 'insert', 'replace', 'visual', 'inactive']
+let s:modes     = ['normal', 'insert', 'replace', 'visual', 'inactive', 'tabline']
 let s:overrides = ['modified', 'paste']
 
 let g:airline#themes#easycolors#palette = s:palette
 
+"let g:airline#themes#easycolors#palette.tabline = {
+   "\    'airline_tabfill':       ['#f8f8f8','#780000',231,88,''],
+   "\    'airline_tabmod_unsel': ['#dddddd','#463030',231,52,''],
+   "\ }
 
 function! s:Hi(mode)
 
