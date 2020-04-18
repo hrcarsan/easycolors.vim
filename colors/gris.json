@@ -176,7 +176,7 @@
       "DiffChange":       {"bg": "LightGrey"},
       "DiffDelete":       {"fg": "LightOrange","bg": "LightOrange"},
       "ALEWarningSign":   {"fg":  "DarkOrange", "bg": "LightGrey2", "opt": "bold"},
-      "ALEErrorSign":     {"fg":  "DarkOrange", "bg": "LightGrey2", "opt": "bold"},
+      "ALEErrorSign":     {"fg":  "AppleRed", "bg": "LightGrey2", "opt": "bold"},
 
       "Directory":        {"fg":  "StrongBlue"},
       "WildMenu":         {"fg":  "DarkGreyHv", "bg": "LightGrey"},
